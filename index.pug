@@ -1,0 +1,38 @@
+doctype html
+html
+	head
+		meta(charset='UTF-8')/
+		meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')/
+		title URL Shortener
+		link(rel='stylesheet' type='text/css' href='/main.css')/
+	body
+		header.hero
+			div.container.hero__grid
+				div.hero__content
+					span.badge Effortlessly Shorten URLs
+					h1 Short links made simple
+					p Build and share memorable URLs with a fast Express server and lightweight NeDB storage.
+					ul.hero__list
+						li Zero-config local datastore
+						li REST API ready for any client
+						li Shareable links in a single click
+				div.form-card
+					h2 Create a short link
+					p Paste a valid URL and we'll generate a compact ID you can share anywhere.
+					label(for='input_url') Destination URL
+					div.form-row
+						input(type='text' id='input_url' placeholder='https://example.com/')
+						button(id='submit_button' disabled) Shorten
+					p.form-hint Works best with https:// links
+					div#result.result
+		main.main
+			section.section
+				div.container
+					h2 How it works
+					p Send the URL as plain text to the `/` endpoint. We validate it, hash it, and store it alongside a compact identifier. Visiting that identifier redirects to your original location.
+					ol.steps
+						li Validate and sanitize your URL
+						li Generate a collision-safe ID
+						li Store it in NeDB and respond with the ID
+			
+		script(type='application/javascript' src='/app.js')

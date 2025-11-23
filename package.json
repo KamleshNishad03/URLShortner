@@ -1,0 +1,32 @@
+{
+  "name": "url-shortener",
+  "version": "0.1.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheDevs-Network/url-shortener.git"
+  },
+  "keywords": [
+    "url",
+    "shortener"
+  ],
+  "author": "KamleshNishad",
+  "license": "Beerware",
+  "bugs": {
+    "url": "https://github.com/TheDevs-Network/url-shortener/issues"
+  },
+  
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "commonmark": "^0.27.0",
+    "express": "^4.21.2",
+    "nedb-promise": "^2.0.1",
+    "pug": "^3.0.3"
+  }
+}

@@ -1,0 +1,246 @@
+@font-face {
+	font-family: 'TeX-Gyre-Cursor';
+	src: url('/fonts/TeX-Gyre-Cursor.otf');
+	font-display: swap;
+}
+
+:root {
+	--bg: #f1f5f9;
+	--surface: #ffffff;
+	--primary: #2563eb;
+	--primary-dark: #1d4ed8;
+	--text: #0f172a;
+	--muted: #475569;
+	--border: #e2e8f0;
+	--success: #16a34a;
+	--error: #dc2626;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family: 'Segoe UI', 'TeX-Gyre-Cursor', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+	line-height: 1.5;
+}
+
+body {
+	min-height: 100vh;
+}
+
+.container {
+	width: min(1200px, 90vw);
+	margin: 0 auto;
+}
+
+.hero {
+	background: linear-gradient(145deg, #0f172a 0%, #1e3a8a 100%);
+	color: #fff;
+	padding: 64px 0 72px;
+}
+
+.hero__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 48px;
+	align-items: center;
+}
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 10px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.15);
+	font-size: 0.85rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: clamp(2rem, 4vw, 3rem);
+	margin: 16px 0 12px;
+	line-height: 1.2;
+}
+
+.hero__content p {
+	color: rgba(255, 255, 255, 0.85);
+	margin: 0 0 20px;
+}
+
+.hero__list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.hero__list li::before {
+	content: '•';
+	color: var(--primary);
+	margin-right: 8px;
+}
+
+.form-card {
+	background: var(--surface);
+	color: var(--text);
+	border-radius: 20px;
+	padding: 28px;
+	box-shadow: 0 24px 60px rgba(15, 23, 42, 0.25);
+}
+
+.form-card h2 {
+	margin: 0 0 6px;
+	font-size: 1.5rem;
+}
+
+.form-card p {
+	margin: 0 0 20px;
+	color: var(--muted);
+}
+
+.form-card label {
+	font-weight: 600;
+	display: block;
+	margin-bottom: 8px;
+}
+
+.form-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+input[type='text'] {
+	flex: 1 1 220px;
+	min-height: 48px;
+	border-radius: 12px;
+	border: 1px solid var(--border);
+	padding: 0 16px;
+	font-size: 1rem;
+	transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+input[type='text']:focus {
+	border-color: var(--primary);
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+	outline: none;
+}
+
+button {
+	border: none;
+	border-radius: 12px;
+	background: var(--primary);
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 600;
+	padding: 0 22px;
+	min-height: 48px;
+	cursor: pointer;
+	transition: background 150ms ease, transform 150ms ease;
+}
+
+button:hover:not(:disabled) {
+	background: var(--primary-dark);
+	transform: translateY(-1px);
+}
+
+button:disabled {
+	background: #94a3b8;
+	cursor: not-allowed;
+}
+
+.form-hint {
+	font-size: 0.9rem;
+	color: var(--muted);
+	margin-top: 10px;
+}
+
+.result {
+	margin-top: 18px;
+	padding: 16px;
+	border-radius: 12px;
+	border: 1px dashed var(--border);
+	background: #f8fafc;
+	min-height: 54px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.result__label {
+	font-size: 0.9rem;
+	color: var(--muted);
+	margin-bottom: 4px;
+}
+
+.result__link {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: var(--primary-dark);
+	text-decoration: none;
+	word-break: break-all;
+}
+
+.result.error {
+	border-color: var(--error);
+	background: #fef2f2;
+	color: var(--error);
+}
+
+.result.success {
+	border-color: var(--success);
+	background: #ecfdf5;
+	color: var(--success);
+}
+
+.main {
+	padding: 64px 0;
+}
+
+.section {
+	padding: 32px 0;
+}
+
+.section--docs {
+	background: #fff;
+	border-top: 1px solid var(--border);
+}
+
+.steps {
+	padding-left: 20px;
+	color: var(--muted);
+}
+
+.docs pre {
+	background: #0f172a;
+	color: #e2e8f0;
+	padding: 16px;
+	border-radius: 12px;
+	overflow-x: auto;
+}
+
+.docs code {
+	font-family: 'Fira Code', 'TeX-Gyre-Cursor', monospace;
+	font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+	.form-row {
+		flex-direction: column;
+	}
+
+	button {
+		width: 100%;
+	}
+}
